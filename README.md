@@ -1,4 +1,4 @@
-### Creative Coding Libraries
+### John Carlo M. Ramos - Ex. 1 - Colour Hue
 ---
 Hi Class,
 
