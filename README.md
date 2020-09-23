@@ -1,5 +1,7 @@
-### John Carlo M. Ramos - Ex. 1 - Colour Hue
+## John Carlo M. Ramos 
+### Ex. 1 - HSB Canvas and Memory Refresh on Basic P5.js
 ---
+### Message from Lecturer:
 Hi Class,
 
 Here you will find the template repository required for your creative coding module
