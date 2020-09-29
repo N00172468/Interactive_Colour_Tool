@@ -43,3 +43,11 @@ function draw() {
     }
 
 }
+
+// Key Bind Interactivity:
+function keyPressed() {
+    if (key=='s' || key=='S') {
+        // saveCanvas('Carlo', 'png');
+        saveCanvas(gd.timestamp(), 'png');
+    }
+}
