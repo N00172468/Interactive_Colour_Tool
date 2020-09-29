@@ -1,7 +1,8 @@
 rectLoop = 75;
 
 function setup() {
-    createCanvas(windowWidth, windowHeight);
+    // createCanvas(windowWidth, windowHeight);
+    createCanvas(500, 500);
     background(0);
 
     // RGB to HSB:
@@ -31,16 +32,27 @@ function draw() {
     // let stepY = 15;
 
     // Interactive HSB Canvas with Mouse:
-    let stepX = mouseX + 1;
-    let stepY = mouseY + 1;
+    // let stepX = mouseX + 1;
+    // let stepY = mouseY + 1;
 
-    for (let y = 0; y < height; y = y + stepY) {
-        for (let x = 0; x < width; x = x + stepX) {
-            noStroke();
-            fill(x, height - y, 100);
-            rect(x, y, stepX, stepY);
+    // for (let y = 0; y < height; y = y + stepY) {
+    //     for (let x = 0; x < width; x = x + stepX) {
+    //         noStroke();
+    //         fill(x, height - y, 100);
+    //         rect(x, y, stepX, stepY);
+    //     }
+    // }
+
+    fill(250, 500, 100);
+    stroke(0);
+    beginShape();
+        VERTEX(50, 50);
+        for (let i = 0; i < 5; i++) {
+            let vx = i * 20;
+            let vy = i/30 * 6;
+            vertex(vx, vy);
         }
-    }
+    endShape(CLOSE);
 
 }
 
