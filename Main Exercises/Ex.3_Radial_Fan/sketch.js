@@ -1,8 +1,8 @@
-numOfSegments = 12;
+let numOfSegments = 12;
+let radius = 100;
 
 function setup() {
     createCanvas(500, 500);
-    background(0);
 
     // RGB to HSB:
     colorMode(HSB, width, height, 100); 
@@ -12,16 +12,13 @@ function setup() {
 }
 
 function draw() {
-    fill(250, 500, 100);
-    stroke(0);
-
     let stepAngle = 360/numOfSegments;
 
-    beginShape();
+    beginShape(TRIANGLE_FAN);
         vertex(250, 250);
-        for (let i = 0; i < numOfSegments; i++) {
-            let vx = 250 * numOfSegments;
-            let vy = 250/30 * numOfSegments;
+        for (let a = 0; a <= 360; a += stepAngle) {
+            let vx = radius * cos(a) + 250;
+            let vy = radius * sin(a) + 250;
             vertex(vx, vy);
         }
     endShape(CLOSE);
