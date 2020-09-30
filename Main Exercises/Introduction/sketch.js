@@ -46,7 +46,7 @@ function draw() {
     fill(250, 500, 100);
     stroke(0);
     beginShape();
-        VERTEX(50, 50);
+        vertex(50, 50);
         for (let i = 0; i < 5; i++) {
             let vx = i * 20;
             let vy = i/30 * 6;
