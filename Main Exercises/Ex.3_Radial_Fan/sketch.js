@@ -12,12 +12,14 @@ function setup() {
 }
 
 function draw() {
+    background(0);
     fill(200, 0, 0);
     let stepAngle = 360/numOfSegments;
 
     // Begin Triangle Fan (based on P5.js docs.):
     beginShape(TRIANGLE_FAN);
-        vertex(250, 250); // Centre of diameter
+        // vertex(250, 250); // Centre of diameter
+        vertex(mouseX, mouseY); // Centre of diameter
         for (let a = 0; a <= 360; a += stepAngle) {
             let vx = radius * cos(a) + 250;
             let vy = radius * sin(a) + 250;
