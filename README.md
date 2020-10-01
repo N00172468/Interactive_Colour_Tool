@@ -4,6 +4,8 @@
 - Year 4
 - Creative Coding Module
 
+---
+
 ### Ex. 1 - Looped HSB
 - A full-windowed canvas displaying the HSB Colour Model.
 
