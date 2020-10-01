@@ -1,7 +1,3 @@
-// let numOfSegments = 12;
-let numOfSegments = 360;
-let radius = 100;
-
 function setup() {
     createCanvas(500, 500);
     background(200);

@@ -1,6 +1,6 @@
 // let numOfSegments = 12;
 let numOfSegments = 360;
-let radius = 100;
+let radius = 200;
 
 function setup() {
     createCanvas(500, 500);
@@ -18,8 +18,8 @@ function draw() {
 
     // Begin Triangle Fan (based on P5.js docs.):
     beginShape(TRIANGLE_FAN);
-        // vertex(250, 250); // Centre of diameter
-        vertex(mouseX, mouseY); // Centre of diameter
+        // vertex(250, 250); // Centre of diameter (Static)
+        vertex(mouseX, mouseY); // Mouse cursor is Centre of diameter (Interactive)
         for (let a = 0; a <= 360; a += stepAngle) {
             let vx = radius * cos(a) + 250;
             let vy = radius * sin(a) + 250;
