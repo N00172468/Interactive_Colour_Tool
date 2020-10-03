@@ -5,7 +5,7 @@ function setup() {
     createCanvas(500, 500);
     background(0, 5, 15);
 
-    colorMode(HSB, 360, 100, 100);
+    colorMode(HSB, 360, 100, 100); // Max. HSB
     angleMode(DEGREES);
     noStroke();
     smooth();
@@ -22,7 +22,8 @@ function draw() {
         for (let a = 0; a <= 360; a += stepAngle) {
             let vx = radius * cos(a) + 250;
             let vy = radius * sin(a) + 250;
-            fill(a, 100, 100); // Created Radial Colour Hue (HSB variant)
+            // fill(a, 100, 100); // Created Radial Colour Hue (HSB variant)
+            fill(mouseX - mouseY - a, mouseX, mouseY); // Created Radial Colour Hue (HSB variant)
             vertex(vx, vy);
         }
     endShape(CLOSE);
