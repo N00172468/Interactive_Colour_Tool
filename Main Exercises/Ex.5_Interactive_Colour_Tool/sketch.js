@@ -16,6 +16,11 @@ function draw() {
     fill(200, 0, 0);
     let stepAngle = 360/numOfSegments;
 
+    // Mapping the transition speed of Hue, Saturation and Brightness Vertical Strips:
+    let slowChangeH = map(mouseX, 0, width, 0, 360); 
+    let slowChangeS = map(mouseX, 0, width, 0, 100); 
+    let slowChangeB = map(mouseX, 0, width, 0, 100);
+
     // Begin Triangle Fan (based on P5.js docs.):
     beginShape(TRIANGLE_FAN);
         vertex(300, 300); // Centre of diameter (Static)
@@ -30,18 +35,30 @@ function draw() {
     // Brief Instruction on how to interact:
     textSize(24);
     textAlign(CENTER, CENTER);
-    fill(0, mouseX, 100 - mouseX);
+    fill(0, 0, 100 - mouseX); // Reverse Brightness against Canvas
     text('Slide Mouse Cursor from Left to Right', 300, 50);
 
     // Hue Rectangle:
     push();
     textSize(24);
     textAlign(CENTER, CENTER);
-    fill(mouseX - 360, 100, 100);
+    fill(slowChangeH, 100, 100);
     text('Hue', 712, 50);
 
-    fill(mouseX - 360, 100, 100);
+    fill(slowChangeH, 100, 100);
     translate(700, 100);
+    rect(0, 0, 25, 400);
+    pop();
+
+    // Saturation Rectangle:
+    push();
+    textSize(24);
+    textAlign(CENTER, CENTER);
+    fill(282, slowChangeS, 100);
+    text('Saturation', 912, 50);
+ 
+    fill(282, slowChangeS, 100);
+    translate(900, 100);
     rect(0, 0, 25, 400);
     pop();
 }
