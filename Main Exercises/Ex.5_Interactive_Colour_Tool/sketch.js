@@ -19,7 +19,7 @@ function draw() {
     // Mapping the transition speed of Hue, Saturation and Brightness Vertical Strips:
     let slowChangeH = map(mouseX, 0, width, 0, 360); 
     let slowChangeS = map(mouseX, 0, width, 0, 100); 
-    let slowChangeB = map(mouseX, 0, width, 0, 100);
+    let slowChangeB = map(mouseX, 400, width, 100, 0);
 
     // Begin Triangle Fan (based on P5.js docs.):
     beginShape(TRIANGLE_FAN);
@@ -42,10 +42,10 @@ function draw() {
     push();
     textSize(24);
     textAlign(CENTER, CENTER);
-    fill(slowChangeH, 100, 100);
+    fill(slowChangeH, mouseX, 100);
     text('Hue', 712, 50);
 
-    fill(slowChangeH, 100, 100);
+    fill(slowChangeH, mouseX, 100);
     translate(700, 100);
     rect(0, 0, 25, 400);
     pop();
@@ -59,6 +59,18 @@ function draw() {
  
     fill(282, slowChangeS, 100);
     translate(900, 100);
+    rect(0, 0, 25, 400);
+    pop();
+
+    // Brightness Rectangle:
+    push();
+    textSize(24);
+    textAlign(CENTER, CENTER);
+    fill(64, 0, slowChangeB);
+    text('Brightness', 1112, 50);
+ 
+    fill(64, 0, slowChangeB);
+    translate(1100, 100);
     rect(0, 0, 25, 400);
     pop();
 }
