@@ -2,7 +2,7 @@ numOfSegments = 360;
 radius = 200;
 
 function setup() {
-    createCanvas(500, 500);
+    createCanvas(600, 600);
     // background(0, 5, 15);
 
     colorMode(HSB, 360, 100, 100); // Max. HSB
@@ -18,13 +18,18 @@ function draw() {
 
     // Begin Triangle Fan (based on P5.js docs.):
     beginShape(TRIANGLE_FAN);
-        vertex(250, 250); // Centre of diameter (Static)
+        vertex(300, 300); // Centre of diameter (Static)
         for (let a = 0; a <= 360; a += stepAngle) {
-            let vx = radius * cos(a) + 250;
-            let vy = radius * sin(a) + 250;
+            let vx = radius * cos(a) + 300;
+            let vy = radius * sin(a) + 300;
             // fill(a, 100, 100); // Created Radial Colour Hue (HSB variant)
             fill(mouseX - a, mouseX, 100); // Created Radial Colour Hue (HSB variant)
             vertex(vx, vy);
         }
+
+        textSize(24);
+        textAlign(CENTER);
+        text('Slide Mouse Cursor from Left to Right', 300, 50);
+        fill(mouseX - 360, mouseX, 100);
     endShape(CLOSE);
 }
