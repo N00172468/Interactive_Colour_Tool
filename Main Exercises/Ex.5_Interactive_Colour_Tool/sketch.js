@@ -22,9 +22,9 @@ function draw() {
      * Mapping the transition speed of Hue, Saturation and Brightness Vertical Strips:
      * i.e. Fine-tuning the transition sped per rectangle. 
      */
-    let slowChangeH = map(mouseX, 0, width, 0, 360); 
-    let slowChangeS = map(mouseX, 0, width, 0, 100); 
-    let slowChangeB = map(mouseX, 400, width, 100, 0);
+    let slowChangeH = map(mouseX, 600, width, 0, 360); 
+    let slowChangeS = map(mouseX, 750, width, 0, 100); 
+    let slowChangeB = map(mouseX, 750, width, 0, 100);
 
     /**
      * RADIAL FAN:
@@ -54,10 +54,10 @@ function draw() {
     push();
     textSize(24);
     textAlign(CENTER, CENTER);
-    fill(slowChangeH, mouseX, 100); // Saturation has transition to match transition of canvas.
+    fill(slowChangeH, mouseX, mouseX); // Saturation has transition to match transition of canvas.
     text('Hue', 712, 50);
 
-    fill(slowChangeH, mouseX, 100);
+    fill(slowChangeH, mouseX, mouseX);
     translate(700, 100);
     rect(0, 0, 25, 400);
     pop();
@@ -68,10 +68,10 @@ function draw() {
     push();
     textSize(24);
     textAlign(CENTER, CENTER);
-    fill(282, slowChangeS, 100);
+    fill(282, slowChangeS, mouseX);
     text('Saturation', 912, 50);
  
-    fill(282, slowChangeS, 100);
+    fill(282, slowChangeS, mouseX);
     translate(900, 100);
     rect(0, 0, 25, 400);
     pop();
@@ -82,10 +82,10 @@ function draw() {
     push();
     textSize(24);
     textAlign(CENTER, CENTER);
-    fill(64, 0, slowChangeB);
+    fill(64, mouseX, slowChangeB);
     text('Brightness', 1112, 50);
  
-    fill(64, 0, slowChangeB);
+    fill(55, mouseX, slowChangeB);
     translate(1100, 100);
     rect(0, 0, 25, 400);
     pop();
