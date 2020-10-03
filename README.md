@@ -22,8 +22,11 @@
 - A refresher on the basics of `translate()`, `push()` and `pop()`.
 
 ### Ex. 5 - Interactive Colour Tool
-- A colour wheel to depict Colour Theory.
-- An exercise to test on what we have learned so far. 
+- An interactive canvas that demonstrates the HSB Colour Model.
+- Includes a colour wheel with rotating hues, Hue Display, Saturation Display and Brightness Display.
+- Interaction consist of moving the mouse cursor from left to right to demonstrate HSB.
+- Designed in a simplistic manner for User Experience (UX).
+- An exercise to test on what we have learned so far within this chapter (i.e. color-shape). 
 
 ---
 ### Message from Lecturer:
