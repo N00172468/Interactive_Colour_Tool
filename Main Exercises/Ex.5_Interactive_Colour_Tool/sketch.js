@@ -1,9 +1,11 @@
+/**
+ * Variables for Radial Fan:
+ */
 numOfSegments = 360;
 radius = 200;
 
 function setup() {
     createCanvas(1200, 540);
-    // background(0, 5, 15);
 
     colorMode(HSB, 360, 100, 100); // Max. HSB
     angleMode(DEGREES);
@@ -12,16 +14,22 @@ function setup() {
 }
 
 function draw() {
-    background(0, 0, mouseX);
+    background(0, 0, mouseX); // Transitional Brightness for Canvas 
     fill(200, 0, 0);
     let stepAngle = 360/numOfSegments;
 
-    // Mapping the transition speed of Hue, Saturation and Brightness Vertical Strips:
+    /**
+     * Mapping the transition speed of Hue, Saturation and Brightness Vertical Strips:
+     * i.e. Fine-tuning the transition sped per rectangle. 
+     */
     let slowChangeH = map(mouseX, 0, width, 0, 360); 
     let slowChangeS = map(mouseX, 0, width, 0, 100); 
     let slowChangeB = map(mouseX, 400, width, 100, 0);
 
-    // Begin Triangle Fan (based on P5.js docs.):
+    /**
+     * RADIAL FAN:
+     * (`TRIANGLE_FAN` based on P5.js)
+     */
     beginShape(TRIANGLE_FAN);
         vertex(300, 300); // Centre of diameter (Static)
         for (let a = 0; a <= 360; a += stepAngle) {
@@ -32,17 +40,21 @@ function draw() {
         }
     endShape(CLOSE);
 
-    // Brief Instruction on how to interact:
+    /**
+     * INSTRUCTION ON HOW TO INTERACT:
+     */
     textSize(24);
     textAlign(CENTER, CENTER);
     fill(0, 0, 100 - mouseX); // Reverse Brightness against Canvas
     text('Slide Mouse Cursor from Left to Right', 300, 50);
 
-    // Hue Rectangle:
+    /**
+     * HUE DEMONSTRATION:
+     */
     push();
     textSize(24);
     textAlign(CENTER, CENTER);
-    fill(slowChangeH, mouseX, 100);
+    fill(slowChangeH, mouseX, 100); // Saturation has transition to match transition of canvas.
     text('Hue', 712, 50);
 
     fill(slowChangeH, mouseX, 100);
@@ -50,7 +62,9 @@ function draw() {
     rect(0, 0, 25, 400);
     pop();
 
-    // Saturation Rectangle:
+    /**
+     * SATURATION DEMONSTRATION:
+     */
     push();
     textSize(24);
     textAlign(CENTER, CENTER);
@@ -62,7 +76,9 @@ function draw() {
     rect(0, 0, 25, 400);
     pop();
 
-    // Brightness Rectangle:
+    /**
+     * BRIGHTNESS DEMONSTRATION:
+     */
     push();
     textSize(24);
     textAlign(CENTER, CENTER);
