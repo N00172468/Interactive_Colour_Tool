@@ -2,7 +2,7 @@ numOfSegments = 360;
 radius = 200;
 
 function setup() {
-    createCanvas(600, 600);
+    createCanvas(1200, 540);
     // background(0, 5, 15);
 
     colorMode(HSB, 360, 100, 100); // Max. HSB
@@ -22,14 +22,26 @@ function draw() {
         for (let a = 0; a <= 360; a += stepAngle) {
             let vx = radius * cos(a) + 300;
             let vy = radius * sin(a) + 300;
-            // fill(a, 100, 100); // Created Radial Colour Hue (HSB variant)
-            fill(mouseX - a, mouseX, 100); // Created Radial Colour Hue (HSB variant)
+            fill(mouseX - a, mouseX, 100); // Interactive Radial Colour Hue (HSB variant)
             vertex(vx, vy);
         }
-
-        textSize(24);
-        textAlign(CENTER);
-        text('Slide Mouse Cursor from Left to Right', 300, 50);
-        fill(mouseX - 360, mouseX, 100);
     endShape(CLOSE);
+
+    // Brief Instruction on how to interact:
+    textSize(24);
+    textAlign(CENTER, CENTER);
+    fill(0, mouseX, 100 - mouseX);
+    text('Slide Mouse Cursor from Left to Right', 300, 50);
+
+    // Hue Rectangle:
+    push();
+    textSize(24);
+    textAlign(CENTER, CENTER);
+    fill(mouseX - 360, 100, 100);
+    text('Hue', 712, 50);
+
+    fill(mouseX - 360, 100, 100);
+    translate(700, 100);
+    rect(0, 0, 25, 400);
+    pop();
 }
